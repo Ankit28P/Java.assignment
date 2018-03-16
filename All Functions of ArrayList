@@ -1,0 +1,81 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class arraylist {
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		ArrayList<String> color = new ArrayList<>();
+		color.add("Red");
+		color.add("yello");
+		color.add("blue");
+		color.add("white");
+		color.add("black");
+		color.add("maroon");
+		color.add("green");
+		color.add(7, "pink");
+		color.set(6, "grey");
+		color.remove(4);
+		
+		
+		ArrayList<String> colors = new ArrayList<>();
+		colors.add("orange");
+		colors.add("black");
+		
+		
+		Collections.copy(color, colors);
+		Collections.shuffle(color);
+		
+		List<String> subcolor = color.subList(0 , 4);
+		
+		ArrayList<String> Compare = new ArrayList<>();
+		for(String compare: color) {
+			Compare.add(colors.contains(compare)? "Yes" : "No"); 
+		}
+		System.out.println("Compare AraayList: "+Compare);
+		
+		
+		System.out.println(colors);
+		System.out.println(color);
+		System.out.println("SubColor: "+subcolor);
+		Collections.reverse(color);
+		System.out.println("Reverse: "+color);
+		
+		ArrayList<String> join = new ArrayList<>();
+		join.addAll(color);
+		join.addAll(colors);
+		System.out.println("Join Array: "+join);
+		
+		ArrayList<String> Color = (ArrayList<String>)color.clone();
+		System.out.println("clone: "+Color);
+		Color.removeAll(Color);
+		System.out.println("After removeAll: "+Color);
+		System.out.println("Checking Empty: "+Color.isEmpty());
+	
+		
+		for(String c: color) {
+			System.out.println(c);	
+		}
+		
+		
+		if(color.contains("blue")) {
+			System.out.println("Found color!");
+		}
+		else {
+			System.out.println("color Not Found!");
+		}
+		
+		System.out.println("Before Swap: ");
+		for(String C1: color) {
+			System.out.println(C1);
+		}
+		System.out.println("After Swap: ");
+		Collections.swap(color, 0, 1);
+		for(String C2: color) {
+			System.out.println(C2);
+		}
+	}
+
+}
